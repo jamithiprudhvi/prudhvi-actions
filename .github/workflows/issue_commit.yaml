@@ -1,12 +1,13 @@
-name: Create commit on a new issue
+name: Create a commit on new issue
 on:
   issues:
     types: [opened]
 
 jobs:
- commit-with-actions:
-   runs-on: ubuntu-latest
-   steps:
-    - name: "dump github context"
-      run: echo "${{ tojson(github)}}" | jq
-      shell: bash  
+  commet-with-actions:
+    runs-on: ubuntu-latest
+    steps:
+      - name: "dump github contest"
+        run: echo '{{ toJSON(github.event) }}' | jq
+        shell: bash
+  
