@@ -1,0 +1,14 @@
+name: Create commit on a new issue
+on:
+  issues:
+    types: [opened]
+
+jobs:
+ commit-with-actions:
+  runs-on: ubuntu-latest
+  steps:
+    - name: checkout code:
+      uses: actions/checkout@v4 
+    - name: "dump github context"
+      run: echo "${{ tojson(github)}}" | jq
+      shell: bash  
